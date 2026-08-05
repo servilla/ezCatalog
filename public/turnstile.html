@@ -87,6 +87,7 @@
           },
           // CRITICAL: Tells the browser to accept and store the 'edi-token' cookie set by FastAPI
           credentials: "include" 
+          body: JSON.stringify({})
         });
 
         if (!response.ok) {
