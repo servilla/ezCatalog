@@ -16,6 +16,7 @@
    <script src="leaflet-map-view.js"></script>
    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -23,6 +24,23 @@
      <img src="images/logo.png" alt="" class="banner-logo" id="banner-logo-img" />
      <span id="branding-text" class="branding-text"></span>
    </div>
+   
+   <div 
+    class="cf-turnstile" 
+    data-sitekey="1x00000000000000000000AA" 
+    data-callback="onTurnstileSuccess"
+    data-expired-callback="onTurnstileExpired"
+    data-theme="light">
+   </div>
+
+   <br>
+
+   <button id="submitBtn" onclick="sendDataToProxy()">Send Request</button>
+
+   <p id="statusOutput"></p>
+
+   <script src="app.js"></script>
+   
    <div class="main-layout">
      <aside class="sidebar" id="search-tab">
         <h2 class="filter-title">Filter</h2>
