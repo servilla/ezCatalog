@@ -25,19 +25,26 @@
      <span id="branding-text" class="branding-text"></span>
    </div>
    
-   <div 
-    class="cf-turnstile" 
-    data-sitekey="1x00000000000000000000AA" 
-    data-callback="onTurnstileSuccess"
-    data-expired-callback="onTurnstileExpired"
-    data-theme="light">
-   </div>
+<aside class="sidebar" id="search-tab">
+  <h2 class="filter-title">Filter</h2>
+  
+  <form id="dataSearchForm" name="dataSearchForm">
+    <!-- Active filters and inputs here... -->
 
-   <br>
+    <!-- TURNSTILE CONTAINER INSIDE FORM -->
+    <div style="margin: 15px 0;">
+      <div 
+        class="cf-turnstile" 
+        data-sitekey="YOUR_ACTUAL_CLOUDFLARE_SITEKEY" 
+        data-callback="onTurnstileSuccess"
+        data-expired-callback="onTurnstileExpired"
+        data-theme="light">
+      </div>
+    </div>
 
-   <button id="submitBtn" onclick="sendDataToProxy()">Send Request</button>
-
-   <p id="statusOutput"></p>
+    <button type="submit" id="searchSubmitBtn">Search</button>
+  </form>
+</aside>
 
    <script src="turnstile.js"></script>
    
