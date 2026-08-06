@@ -1,13 +1,8 @@
 const PASTA_SERVER = "https://pasta.lternet.edu/package/search/eml?";
-const token = sessionStorage.getItem("edi-token");
 
 async function fetchDataPackageIdentifiers(scope, filter = `&fq=scope:${scope}`) {
     const url = `${PASTA_SERVER}fl=packageid&defType=edismax${filter}&q=*&rows=1000`;
-    const response = await fetch(url, {
-        headers: {
-        "Authorization": `Bearer ${token}`
-        }
-      });
+    const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Failed to fetch data packages: ${response.status}`);
     }
