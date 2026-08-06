@@ -98,15 +98,9 @@
 
         statusDiv.innerText = "Verification successful! Redirecting...";
 
-        const data = await response.json();
-        if (data.token) {
-          // Store the token manually in browser storage
-          sessionStorage.setItem("edi-token", data.token);
-
-          // Redirect to demo.html upon successful verification
-          window.location.href = "demo.html";
-        }
-
+        // Redirect to demo.html upon successful verification
+        window.location.href = "demo.html";
+        
       } catch (error) {
         console.error("Authentication Error:", error);
         statusDiv.className = "status-msg error-msg";
