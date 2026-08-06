@@ -79,7 +79,7 @@
       statusDiv.innerText = "Verifying session...";
 
       try {
-        const response = await fetch("http://localhost:8088/turnstile", {
+        const response = await fetch("http://pasta-d/turnstile", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
