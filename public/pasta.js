@@ -2,6 +2,7 @@
 
 "use strict";
 
+
 // Use Node.js imports for testing, otherwise use browser globals
 if (typeof module !== 'undefined' && module.exports) {
   var fetchDataPackageIdentifiers, buildRidarePayload, postToRidareEndpoint, reformatXMLDocument;
